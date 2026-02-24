@@ -27,7 +27,7 @@ export default function Footer() {
       <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16">
         <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-24 mb-16 md:mb-24">
           {/* Branding */}
-          <div className="lg:w-1/3 flex flex-col items-left">
+          <div className="lg:w-1/3 flex flex-col items-center">
            {/* Logo */}
                   <Link href="/" className="flex items-center gap-2 group">
                     <img
@@ -36,15 +36,21 @@ export default function Footer() {
                       className="h-27 md:h-28 w-auto"
                     />
                     </Link>
-            <div className="mb-5">
+            <div className="mb-5 flex flex-col leading-tight items-center">
               <span
                 className="text-[#ec1313] text-2xl md:text-3xl tracking-[0.05em] uppercase font-bold"
                 style={{ fontFamily: 'BPdots, sans-serif' }}
               >
                 TRIXTERN
               </span>
+              <span
+                className="text-white text-[10px] md:text-xs tracking-[0.25em] uppercase"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                TECHNOLOGIES
+              </span>
             </div>
-            <p className="text-white/40 text-sm leading-relaxed max-w-xs">
+            <p className="text-white/40 text-sm leading-relaxed max-w-xs items-center justify-center">
               Building digital experiences that matter. Minimalist design for maximum impact.
             </p>
           </div>

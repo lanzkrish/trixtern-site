@@ -26,12 +26,20 @@ export default function Navbar() {
             alt="Trixtern"
             className="h-7 md:h-8 w-auto"
           />
-          <span
-            className="text-[#ec1313] text-lg md:text-xl tracking-[0.05em] uppercase font-bold"
-            style={{ fontFamily: 'BPdots, sans-serif' }}
-          >
-            TRIXTERN
-          </span>
+          <div className="flex flex-col leading-tight items-center justify-center">
+            <span
+              className="text-[#ec1313] text-lg md:text-xl tracking-[0.05em] uppercase font-bold"
+              style={{ fontFamily: 'BPdots, sans-serif' }}
+            >
+              TRIXTERN
+            </span>
+            <span
+              className="text-black text-[8px] md:text-[9px] tracking-[0.25em] uppercase"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              TECHNOLOGIES
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
