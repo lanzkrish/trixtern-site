@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+@source "../";
+
+@theme inline {
+  --color-primary: #ec1313;
+  --color-primary-dark: #c90f0f;
+  --color-bg-light: #f8f6f6;
+  --color-bg-dark: #181111;
+  --font-display: 'Inter', sans-serif;
+}
+
+/* ── Global base ────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #ffffff;
+  color: #181111;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: rgba(236, 19, 19, 0.15);
+  color: #ec1313;
+}
+
+/* ── Floating-label inputs (Contact page) ───────────────────── */
+.floating-label-input {
+  position: relative;
+}
+.floating-label-input input,
+.floating-label-input textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  background: transparent;
+  padding: 12px 0;
+  font-size: 16px;
+  color: #181111;
+  transition: border-color 0.3s;
+  outline: none;
+}
+.floating-label-input input:focus,
+.floating-label-input textarea:focus {
+  border-bottom-color: #181111;
+}
+.floating-label-input label {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.floating-label-input input:focus ~ label,
+.floating-label-input input:not(:placeholder-shown) ~ label,
+.floating-label-input textarea:focus ~ label,
+.floating-label-input textarea:not(:placeholder-shown) ~ label {
+  top: -8px;
+  font-size: 12px;
+  color: #181111;
+}
+
+
