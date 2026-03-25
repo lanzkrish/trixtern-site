@@ -1,5 +1,21 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+import { ServiceJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
+export const metadata: Metadata = {
+  title: 'Services — AI, Web Development, Cloud & Cybersecurity',
+  description:
+    'Explore Trixtern Technologies\' services: Artificial Intelligence, Software Engineering, FinTech Solutions, Cloud Infrastructure, and Cybersecurity. Based in Bhubaneswar, Odisha — serving businesses across India.',
+  alternates: {
+    canonical: 'https://www.trixtern.com/services',
+  },
+  openGraph: {
+    title: 'Our Services — Trixtern Technologies, Bhubaneswar',
+    description:
+      'AI, Software Engineering, Cloud Infrastructure, Cybersecurity & FinTech — precision-built in Bhubaneswar, Odisha.',
+    url: 'https://www.trixtern.com/services',
+  },
+};
 const services = [
   {
     title: 'Artificial Intelligence',
@@ -27,6 +43,13 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
+      <ServiceJsonLd />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://www.trixtern.com' },
+          { name: 'Services', url: 'https://www.trixtern.com/services' },
+        ]}
+      />
       {/* Hero */}
       <section className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 pt-20 md:pt-28 pb-12 md:pb-16">
         <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-[-0.03em] leading-[1.05] mb-4 md:mb-6">

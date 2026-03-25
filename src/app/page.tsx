@@ -1,8 +1,26 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+import { BreadcrumbJsonLd } from '@/components/JsonLd';
+
+export const metadata: Metadata = {
+  title: 'Trixtern Technologies | Best Software Development Company in Bhubaneswar, Odisha',
+  description:
+    'Trixtern Technologies is a top-rated software development company in Bhubaneswar, Odisha. We offer AI solutions, web & app development, UI/UX design, cloud infrastructure, and digital strategy to build scalable digital ecosystems.',
+  alternates: {
+    canonical: 'https://www.trixtern.com',
+  },
+  openGraph: {
+    title: 'Trixtern Technologies | Software Development Company in Bhubaneswar',
+    description:
+      'Engineering intentionality — AI, web development, and cloud solutions from Bhubaneswar, Odisha.',
+    url: 'https://www.trixtern.com',
+  },
+};
 
 export default function HomePage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: 'Home', url: 'https://www.trixtern.com' }]} />
       {/* Hero Section */}
       <section className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 pt-24 md:pt-32 pb-20 md:pb-32">
         <div className="max-w-4xl">

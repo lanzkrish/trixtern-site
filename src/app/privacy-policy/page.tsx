@@ -1,4 +1,19 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  description:
+    'Read the Trixtern Technologies Privacy Policy. Learn how we collect, use, and protect your personal data.',
+  alternates: {
+    canonical: 'https://www.trixtern.com/privacy-policy',
+  },
+  openGraph: {
+    title: 'Privacy Policy — Trixtern Technologies',
+    description: 'How Trixtern Technologies handles and protects your personal information.',
+    url: 'https://www.trixtern.com/privacy-policy',
+  },
+};
 
 export default function PrivacyPolicyPage() {
   return (

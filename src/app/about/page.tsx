@@ -1,3 +1,20 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About Us — Our Story & Vision',
+  description:
+    'Learn about Trixtern Technologies, an engineer-led software development company founded in Bhubaneswar, Odisha. We build resilient digital systems with AI, precision engineering, and long-term intent.',
+  alternates: {
+    canonical: 'https://www.trixtern.com/about',
+  },
+  openGraph: {
+    title: 'About Trixtern Technologies — Software Company in Bhubaneswar',
+    description:
+      'Engineer-led digital agency from Bhubaneswar, Odisha building the next generation of intelligent software systems.',
+    url: 'https://www.trixtern.com/about',
+  },
+};
+
 export default function AboutPage() {
   return (
     <>

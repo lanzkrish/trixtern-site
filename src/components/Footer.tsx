@@ -59,7 +59,7 @@ export default function Footer() {
 
           {/* Link columns */}
           <div className="lg:w-2/3 grid grid-cols-2 md:grid-cols-3 gap-8">
-            <div>
+            <nav aria-label="Company links">
               <h4 className="text-white font-semibold mb-4 md:mb-6">Company</h4>
               <ul className="space-y-3 md:space-y-4 text-sm text-white/60">
                 {companyLinks.map((link) => (
@@ -70,8 +70,8 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
-            <div>
+            </nav>
+            <nav aria-label="Services links">
               <h4 className="text-white font-semibold mb-4 md:mb-6">Services</h4>
               <ul className="space-y-3 md:space-y-4 text-sm text-white/60">
                 {serviceLinks.map((link) => (
@@ -82,7 +82,7 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </nav>
             <div className="col-span-2 md:col-span-1">
               <h4 className="text-white font-semibold mb-4 md:mb-6">Social</h4>
               <ul className="flex flex-row md:flex-col gap-4 md:space-y-0 text-sm text-white/60 flex-wrap">
