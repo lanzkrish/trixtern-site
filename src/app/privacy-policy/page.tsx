@@ -68,7 +68,7 @@ export default function PrivacyPolicyPage() {
         <span className="text-[#ec1313] text-xl md:text-2xl">✉</span>
         <div>
           <h3 className="font-bold mb-1 text-sm md:text-base">Email Privacy Team</h3>
-          <a href="mailto:privacy@trixtern.com" className="text-[#ec1313] text-xs md:text-sm font-medium hover:underline">privacy@trixtern.com</a>
+          <a href="mailto:privacy@trixtern.com" className="text-[#ec1313] text-xs md:text-sm font-medium hover:underline">contact@trixtern.com</a>
           <p className="text-xs md:text-sm text-black/40 mt-1">We typically respond within 48 hours.</p>
         </div>
       </div>

@@ -110,11 +110,11 @@ export default function TermsPage() {
           <div className="flex flex-col sm:flex-row gap-6 md:gap-8 mb-8 md:mb-12">
             <div>
               <p className="text-xs uppercase tracking-widest text-black/40 font-bold mb-1.5 md:mb-2">Email Us</p>
-              <a href="mailto:legal@trixtern.com" className="text-[#ec1313] text-sm font-medium hover:underline">legal@trixtern.com</a>
+              <a href="mailto:legal@trixtern.com" className="text-[#ec1313] text-sm font-medium hover:underline">contact@trixtern.com</a>
             </div>
             <div>
               <p className="text-xs uppercase tracking-widest text-black/40 font-bold mb-1.5 md:mb-2">Mailing Address</p>
-              <p className="text-xs md:text-sm text-black/60">100 Tech Plaza, Suite 400<br />San Francisco, CA 94107</p>
+              <p className="text-xs md:text-sm text-black/60">Plot No-524, Nalihana, Saraswatipur,<br />Balanga, Puri, Nimapara, Orissa, India, 752105</p>
             </div>
           </div>
 
