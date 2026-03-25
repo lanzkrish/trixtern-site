@@ -22,7 +22,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
           <img
-            src="/logos/2.png"
+            src="/logos/trixternnobg.png"
             alt="Trixtern"
             className="h-7 md:h-8 w-auto"
           />
