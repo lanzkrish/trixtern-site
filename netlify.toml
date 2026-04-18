@@ -1,0 +1,19 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Extend function timeout to 26 seconds to allow SMTP to complete
+# (Gmail SMTP can take 10–15 seconds on cold connections)
+[functions]
+  node_bundler = "nft"
+
+[[functions]]
+  path = "/api/contact"
+  [functions.properties]
+    timeout = 26

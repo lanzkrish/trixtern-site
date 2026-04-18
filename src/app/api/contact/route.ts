@@ -1,6 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
+// Force Node.js runtime — Edge runtime blocks raw TCP/SMTP connections
+export const runtime = 'nodejs';
+
+// Netlify Functions timeout is 10s by default; keep SMTP well under that
+const SMTP_TIMEOUT_MS = 8000;
+
 export async function POST(request: NextRequest) {
     try {
         const body = await request.json();
@@ -25,22 +31,27 @@ export async function POST(request: NextRequest) {
 
         // Check that SMTP credentials are configured
         if (!process.env.SMTP_EMAIL || !process.env.SMTP_PASSWORD) {
-            console.error('SMTP credentials not configured. Set SMTP_EMAIL and SMTP_PASSWORD in .env.local');
+            console.error('[Contact] SMTP credentials not configured. Set SMTP_EMAIL and SMTP_PASSWORD in environment variables.');
             return NextResponse.json(
                 { error: 'Email service is not configured. Please try again later.' },
                 { status: 500 }
             );
         }
 
+        console.log('[Contact] Creating SMTP transporter for:', process.env.SMTP_EMAIL);
+
         // Create Nodemailer transporter with Google Workspace SMTP
         const transporter = nodemailer.createTransport({
             host: 'smtp.gmail.com',
             port: 587,
-            secure: false, // STARTTLS
+            secure: false, // STARTTLS on port 587
             auth: {
                 user: process.env.SMTP_EMAIL,
                 pass: process.env.SMTP_PASSWORD,
             },
+            connectionTimeout: SMTP_TIMEOUT_MS,
+            socketTimeout: SMTP_TIMEOUT_MS,
+            greetingTimeout: SMTP_TIMEOUT_MS,
         });
 
         // Compose the email
@@ -79,15 +90,28 @@ export async function POST(request: NextRequest) {
       `,
         };
 
-        // Send the email
-        await transporter.sendMail(mailOptions);
+        console.log('[Contact] Sending email to contact@trixtern.com...');
+        const info = await transporter.sendMail(mailOptions);
+        console.log('[Contact] Email sent successfully. Message ID:', info.messageId);
 
         return NextResponse.json(
             { message: 'Your message has been sent successfully!' },
             { status: 200 }
         );
     } catch (error) {
-        console.error('Contact form error:', error);
+        const err = error as NodeJS.ErrnoException & {
+            responseCode?: number;
+            response?: string;
+            command?: string;
+        };
+        console.error('[Contact] Email error:', {
+            name: err.name,
+            message: err.message,
+            code: err.code,
+            responseCode: err.responseCode,
+            response: err.response,
+            command: err.command,
+        });
         return NextResponse.json(
             { error: 'Failed to send message. Please try again later.' },
             { status: 500 }
