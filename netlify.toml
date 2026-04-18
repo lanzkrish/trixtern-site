@@ -4,7 +4,3 @@
 
 [build.environment]
   NODE_VERSION = "20"
-
-[functions]
-  node_bundler = "nft"
-  included_files = ["node_modules/nodemailer/**"]
