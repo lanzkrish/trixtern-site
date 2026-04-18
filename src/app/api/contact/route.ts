@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
         const { data, error } = await resend.emails.send({
             from: 'Trixtern Website <contact@trixtern.com>',
             to: ['contact@trixtern.com'],
-            reply_to: email,
+            replyTo: email,
             subject: subject
                 ? `[Website Contact] ${subject}`
                 : `[Website Contact] Message from ${name}`,
