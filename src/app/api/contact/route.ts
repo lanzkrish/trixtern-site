@@ -4,7 +4,7 @@ import { Resend } from 'resend';
 export async function POST(request: NextRequest) {
     try {
         const body = await request.json();
-        const { name, email, subject, message } = body;
+        const { name, email, phone, subject, message } = body;
 
         // Validate required fields
         if (!name || !email || !message) {
@@ -57,6 +57,10 @@ export async function POST(request: NextRequest) {
                         <td style="padding: 12px 0; border-bottom: 1px solid #eee; color: #555;"><a href="mailto:${email}" style="color: #ec1313;">${email}</a></td>
                       </tr>
                       <tr>
+                        <td style="padding: 12px 0; border-bottom: 1px solid #eee; font-weight: 600; color: #333;">Phone</td>
+                        <td style="padding: 12px 0; border-bottom: 1px solid #eee; color: #555;">${phone || 'N/A'}</td>
+                      </tr>
+                      <tr>
                         <td style="padding: 12px 0; border-bottom: 1px solid #eee; font-weight: 600; color: #333;">Subject</td>
                         <td style="padding: 12px 0; border-bottom: 1px solid #eee; color: #555;">${subject || 'N/A'}</td>
                       </tr>
@@ -68,7 +72,7 @@ export async function POST(request: NextRequest) {
                   </div>
                 </div>
             `,
-            text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject || 'N/A'}\n\nMessage:\n${message}`,
+            text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'N/A'}\nSubject: ${subject || 'N/A'}\n\nMessage:\n${message}`,
         });
 
         if (error) {

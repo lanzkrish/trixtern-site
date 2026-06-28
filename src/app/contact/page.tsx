@@ -6,6 +6,7 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     subject: '',
     message: '',
   });
@@ -36,7 +37,7 @@ export default function ContactPage() {
       }
 
       setStatus('sent');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
       setTimeout(() => setStatus('idle'), 4000);
     } catch (err) {
       setStatus('error');
@@ -89,6 +90,17 @@ export default function ContactPage() {
                 />
                 <label htmlFor="email">Email Address *</label>
               </div>
+            </div>
+            <div className="floating-label-input">
+              <input
+                type="tel"
+                id="phone"
+                placeholder=" "
+                value={formData.phone}
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                disabled={status === 'sending'}
+              />
+              <label htmlFor="phone">Phone Number</label>
             </div>
             <div className="floating-label-input">
               <input
