@@ -19,7 +19,7 @@ const WhatsAppCTA = () => {
       {/* Dialog Box */}
       {isOpen && (
         <div className="absolute right-16 top-0 w-72 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden animate-in fade-in slide-in-from-right-4 duration-300">
-          <div className="bg-[#25D366] text-white p-4 flex justify-between items-center">
+          <div className="bg-[#ec1313] text-white p-4 flex justify-between items-center">
             <div>
               <h3 className="font-semibold text-lg">Trixtern Support</h3>
               <p className="text-xs opacity-90 text-[#ffcdd2]">Typically replies instantly</p>
@@ -48,7 +48,7 @@ const WhatsAppCTA = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
-              className="flex items-center justify-center w-full gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white font-medium py-2 px-4 rounded-lg transition-colors"
+              className="flex items-center justify-center w-full gap-2 bg-[#ec1313] hover:bg-[#c90f0f] text-white font-medium py-2 px-4 rounded-lg transition-colors"
             >
               Start Chat
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
@@ -79,8 +79,8 @@ const WhatsAppCTA = () => {
         {/* Optional small ping indicator to draw attention */}
         {!isOpen && (
           <span className="absolute -top-1 -right-1 flex h-4 w-4">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-4 w-4 bg-[#25D366] border-2 border-white"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ec1313] opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-4 w-4 bg-[#ec1313] border-2 border-white"></span>
           </span>
         )}
       </button>
