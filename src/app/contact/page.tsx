@@ -226,7 +226,7 @@ export default function ContactPage() {
 
           <div className="pt-2 md:pt-4">
             <a
-              href="https://wa.me/919815763993?text=Hi!%20I%20would%20like%20to%20know%20more"
+              href="https://wa.me/916372669269?text=Hi!%20I%20would%20like%20to%20know%20more"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-6 py-3 md:py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white text-sm md:text-base font-medium rounded-lg transition-all shadow-sm hover:shadow-md group w-fit"
