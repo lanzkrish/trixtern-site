@@ -5,7 +5,7 @@ import "@/styles/global.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { OrganizationJsonLd } from "@/components/JsonLd";
-import WhatsAppCTA from "@/components/WhatsAppCTA";
+import ContactCTA from "@/components/ContactCTA";
 
 const BASE_URL = "https://www.trixtern.com";
 
@@ -105,7 +105,7 @@ export default function RootLayout({
         <OrganizationJsonLd />
         <Navbar />
         <main className="flex-grow">{children}</main>
-        <WhatsAppCTA />
+        <ContactCTA />
         <Footer />
         
         {/* Google Analytics */}

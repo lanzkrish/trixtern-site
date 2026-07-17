@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-const WhatsAppCTA = () => {
+const ContactCTA = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDialog = () => setIsOpen(!isOpen);
@@ -120,4 +120,4 @@ const WhatsAppCTA = () => {
   );
 };
 
-export default WhatsAppCTA;
+export default ContactCTA;
