@@ -49,10 +49,10 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors ${
+              className={`text-sm font-medium transition-all duration-300 ${
                 pathname === link.href
                   ? 'text-[#ec1313]'
-                  : 'text-black hover:text-[#ec1313]'
+                  : 'text-black hover:text-[#ec1313] hover:-translate-y-0.5'
               }`}
             >
               {link.label}
@@ -64,7 +64,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center">
           <Link
             href="/contact"
-            className="bg-black text-white text-xs font-semibold px-5 py-2.5 rounded-full hover:bg-[#ec1313] transition-colors"
+            className="bg-[#ec1313] text-white text-xs font-semibold px-6 py-2.5 rounded-full hover:bg-[#c90f0f] transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
           >
             Get in Touch
           </Link>

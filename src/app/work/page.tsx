@@ -9,7 +9,7 @@ const projects = [
     category: 'Renewable Energy',
     tagline: 'Powering clean energy with clean design.',
     desc: 'A digital platform built for a leading rooftop solar provider in Odisha. We translated a complex service ecosystem — solar installations, government subsidies, and net metering — into a clear, intuitive web experience.',
-    tags: ['Web Design', 'Frontend', 'CMS'],
+    tags: ['Web Design','ERP', 'CMS'],
     bg: '#0a3d2e',
     accent: '#4ade80',
     lightBg: '#f0fdf4',
@@ -47,11 +47,11 @@ const projects = [
   },
   {
     id: 3,
-    title: 'PC Quicker',
+    title: 'Pc Quicker',
     category: 'On-Demand Services',
     tagline: 'Service at the speed of now.',
-    desc: 'An on-demand PC and laptop servicing platform. We streamlined service workflows and digital operations to improve accessibility and customer experience.',
-    tags: ['App Design', 'Operations', 'UX'],
+    desc: 'PcQuicker is a doorstep laptop and desktop repair service that provides fast, reliable, and transparent computer solutions, including diagnostics, upgrades, repairs, and pickup & delivery for homes and businesses.',
+    tags: ['Web','App Design', 'Operations', 'UX'],
     bg: '#0c1a2e',
     accent: '#38bdf8',
     lightBg: '#f0f9ff',
@@ -309,9 +309,15 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           </h3>
           <p
             style={{ color: hovered ? project.accent : '#ec1313', transition: 'color 0.5s' }}
-            className="text-sm font-semibold"
+            className="text-sm font-semibold mb-3"
           >
             {project.tagline}
+          </p>
+          <p
+            style={{ color: hovered ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.4)', transition: 'color 0.5s' }}
+            className="text-sm leading-relaxed"
+          >
+            {project.desc}
           </p>
         </div>
 
