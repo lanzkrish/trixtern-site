@@ -43,7 +43,7 @@ const ContactCTA = () => {
 
           <div className="p-4 bg-white border-t border-gray-100">
             <a
-              href="https://api.whatsapp.com/send/?phone=919815763993&text=Hi%21+I+would+like+to+know+more&type=phone_number&app_absent=0"
+              href="https://wa.me/9815763993?text=Hi%20Trixtern!%20I%20have%20a%20project%20idea.%20Can%20we%20discuss%20it%3F"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
