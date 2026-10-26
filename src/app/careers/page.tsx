@@ -22,13 +22,6 @@ const allJobs: Job[] = [
     desc: 'Design intuitive user experiences and interfaces for our products.',
   },
   {
-    title: 'Digital Marketing Intern',
-    department: 'Marketing',
-    type: 'Internship',
-    status: 'Actively Hiring',
-    desc: 'Create engaging campaigns, content, and strategies to boost our digital presence.',
-  },
-  {
     title: 'Intern Graphic Designer',
     department: 'Design',
     type: 'Internship',
@@ -36,11 +29,46 @@ const allJobs: Job[] = [
     desc: 'Design eye-catching visuals and brand assets for social media and marketing.',
   },
   {
+    title: 'Digital Marketing Intern',
+    department: 'Marketing',
+    type: 'Internship',
+    status: 'Actively Hiring',
+    desc: 'Create engaging campaigns, content, and strategies to boost our digital presence.',
+  },
+  {
+    title: 'Social Media Manager',
+    department: 'Marketing',
+    type: 'Full-time',
+    status: 'Actively Hiring',
+    desc: 'Create, curate, and optimize engaging campaigns across social channels to grow our audience and brand.',
+  },
+  {
     title: 'Content Writer',
     department: 'Marketing',
     type: 'Full-time',
     status: 'Hiring Open',
     desc: 'Create engaging and high-quality content for various platforms.',
+  },
+  {
+    title: 'Business Development Executive',
+    department: 'Business Development',
+    type: 'Full-time',
+    status: 'Actively Hiring',
+    desc: 'Drive revenue growth, forge high-impact partnerships, and manage end-to-end sales pipelines.',
+  },
+  {
+    title: 'Business Development Intern',
+    department: 'Business Development',
+    type: 'Internship',
+    status: 'Actively Hiring',
+    desc: 'Assist in market research, prospect outreach, and lead generation to fuel business expansion.',
+  },
+  {
+    title: 'AI/ML Developer',
+    department: 'Engineering',
+    type: 'Full-time',
+    status: 'No Position Opened',
+    desc: 'Develop and deploy machine learning models to solve complex problems.',
   },
   {
     title: 'Android Developer',
@@ -63,16 +91,9 @@ const allJobs: Job[] = [
     status: 'No Position Opened',
     desc: 'Create and maintain responsive and scalable web applications.',
   },
-  {
-    title: 'AI/ML Developer',
-    department: 'Engineering',
-    type: 'Full-time',
-    status: 'Actively Hiring',
-    desc: 'Develop and deploy machine learning models to solve complex problems.',
-  },
 ];
 
-const departments = ['All', 'Engineering', 'Design', 'Marketing'];
+const departments = ['All', 'Engineering', 'Design', 'Marketing', 'Business Development'];
 const statuses = ['All', 'Actively Hiring', 'Hiring Open', 'No Position Opened'];
 
 const statusConfig: Record<JobStatus, { dot: string; text: string; bg: string }> = {

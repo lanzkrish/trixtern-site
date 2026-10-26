@@ -191,7 +191,7 @@ export default function HomePage() {
       </section>
 
       {/* Core Focus Areas */}
-      <section className="border-y border-black/5 bg-black/[0.01]">
+      <section className="hidden border-y border-black/5 bg-black/[0.01]">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 py-8 md:py-12">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
             {[

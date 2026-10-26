@@ -1,15 +1,17 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 const projects = [
   {
     id: 0,
-    title: 'Sage Odisha',
+    title: 'SageOdisha ERP',
     category: 'Renewable Energy',
-    tagline: 'Powering clean energy with clean design.',
-    desc: 'A digital platform built for a leading rooftop solar provider in Odisha. We translated a complex service ecosystem — solar installations, government subsidies, and net metering — into a clear, intuitive web experience.',
+    tagline: 'Enterprise Resource Planning Platform',
+    desc: 'Custom ERP built for a solar company to manage CRM, PM Surya Ghar workflow, HRMS, inventory, orders, employee management and business operations.',
     tags: ['Web Design','ERP', 'CMS'],
+    slug: '/work/sageodisha-erp',
     bg: '#0a3d2e',
     accent: '#4ade80',
     lightBg: '#f0fdf4',
@@ -115,7 +117,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
   const [hovered, setHovered] = useState(false);
 
   if (project.size === 'large') {
-    return (
+    const CardContent = (
       <div
         style={{
           background: hovered ? project.bg : '#f5f5f7',
@@ -124,9 +126,9 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="rounded-3xl overflow-hidden cursor-pointer col-span-2"
+        className="rounded-3xl overflow-hidden cursor-pointer col-span-2 block h-full"
       >
-        <div className="p-8 md:p-12 lg:p-16 min-h-[420px] flex flex-col justify-between">
+        <div className="p-8 md:p-12 lg:p-16 min-h-[420px] flex flex-col justify-between h-full">
           <div>
             <div className="flex items-center gap-3 mb-6">
               <span
@@ -197,6 +199,16 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             </div>
           </div>
         </div>
+      </div>
+    );
+    
+    return project.slug ? (
+      <Link href={project.slug} className="col-span-2 block">
+        {CardContent}
+      </Link>
+    ) : (
+      <div className="col-span-2">
+        {CardContent}
       </div>
     );
   }
@@ -400,9 +412,7 @@ export default function WorkPage() {
         {/* Row 1: Large card + medium card */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
           {/* Large — spans 2 cols on lg */}
-          <div className="lg:col-span-2">
-            <ProjectCard project={projects[0]} index={0} />
-          </div>
+          <ProjectCard project={projects[0]} index={0} />
           {/* Medium */}
           <div>
             <ProjectCard project={projects[1]} index={1} />
@@ -487,59 +497,7 @@ export default function WorkPage() {
         </div>
       </section>
 
-      {/* ── Case Study: Sage Odisha ───────────────────────────── */}
-      <section className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 py-16 md:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
-          {/* Left */}
-          <div className="lg:col-span-2">
-            <span className="text-[#ec1313] text-xs font-bold uppercase tracking-widest mb-4 block">
-              Featured Case Study
-            </span>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-[1.05] mb-4 text-[#1d1d1f]">
-              Sage Odisha.
-            </h2>
-            <p className="text-[#6e6e73] text-base leading-relaxed mb-8">
-              Web Presence for a Leading Renewable Energy Provider
-            </p>
-            <div className="h-1 w-10 bg-[#ec1313] rounded-full" />
-          </div>
 
-          {/* Right */}
-          <div className="lg:col-span-3 space-y-8">
-            <p className="text-[#1d1d1f]/60 text-base leading-relaxed">
-              Sage Odisha partners with residential and commercial customers to deliver clean energy through MNRE-approved rooftop solar installations, backed by official government subsidy programs like PM Surya Ghar.
-            </p>
-            <p className="text-[#1d1d1f]/60 text-base leading-relaxed">
-              Our collaboration focused on elevating their digital foundation — translating a complex service ecosystem into a simple, intuitive web experience that reflects the clarity, structure, and professionalism of a category-defining energy provider.
-            </p>
-
-            <div>
-              <h3 className="text-lg font-bold text-[#1d1d1f] mb-5">Our Focus</h3>
-              <div className="space-y-3">
-                {[
-                  'Clean information hierarchy for solar solutions',
-                  'Structured presentation of services and subsidy programs',
-                  'Scalable interface architecture',
-                  'Performance-focused front-end design',
-                  'Accessible and responsive layouts',
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4 group">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#ec1313] group-hover:scale-150 transition-transform shrink-0" />
-                    <span className="text-[#1d1d1f]/55 text-sm md:text-base">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-[#f5f5f7] rounded-2xl p-6 md:p-8 border-l-4 border-[#ec1313]">
-              <h3 className="text-base font-bold text-[#1d1d1f] mb-2">The Outcome</h3>
-              <p className="text-[#6e6e73] text-sm md:text-base leading-relaxed">
-                A professional, scalable web presence that mirrors the real-world impact of Sage Odisha&apos;s renewable energy initiatives — maintaining clarity and trust for every user.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ── Principles ───────────────────────────────────────── */}
       <section className="bg-[#f5f5f7] py-16 md:py-24">
